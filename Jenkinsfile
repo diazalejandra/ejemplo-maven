@@ -58,7 +58,7 @@ pipeline {
         stage('download from nexus'){
           steps{
                echo "download from nexus ..."
-               sh "curl -X GET -u admin:admin http://nexus:8081/repository/devops-usach-nexus/com/devopsusach2020/DevOpsUsach2020/0.0.1/DevOpsUsach2020-0.0.1.jar -O"
+               sh "curl -X GET http://nexus:8081/repository/devops-usach-nexus/com/devopsusach2020/DevOpsUsach2020/0.0.1/DevOpsUsach2020-0.0.1.jar -O"
             }
         }
 
