@@ -22,7 +22,8 @@ pipeline {
         stage('sonar') {
            steps{
               withSonarQubeEnv(credentialsId:'newtoken',installationName:'SonarServer') { 
-                sh 'mvn sonar:sonar'
+                bat 'mvnw clean verify sonar:sonar \
+                                    -Dsonar.projectKey=ejemplo-maven'
              }
           }
         } 
