@@ -22,8 +22,16 @@ pipeline {
         stage('sonar') {
            steps{
               withSonarQubeEnv(credentialsId:'newtoken',installationName:'SonarServer') { 
-                bat 'mvnw clean verify sonar:sonar \
+					script {
+                        if(isUnix()) {
+                            echo 'Unix OS'
+                                sh './mvnw clean verify sonar:sonar \
+                                     -Dsonar.projectKey=ejemplo-maven'
+                        } else {
+                            echo 'Windows OS'
+                                bat 'mvnw clean verify sonar:sonar \
                                     -Dsonar.projectKey=ejemplo-maven'
+                        }
              }
           }
         } 
