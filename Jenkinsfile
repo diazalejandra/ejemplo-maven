@@ -32,6 +32,7 @@ pipeline {
                                 bat 'mvnw clean verify sonar:sonar \
                                     -Dsonar.projectKey=ejemplo-maven'
                         }
+					}
              }
           }
         } 
