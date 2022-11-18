@@ -63,7 +63,7 @@ pipeline {
         }
 
 
-		stage('uploadNexus v0.0.1') {
+		stage('uploadNexus v1.0.0') {
            steps{
             step(
              [$class: 'NexusPublisherBuildStep',
